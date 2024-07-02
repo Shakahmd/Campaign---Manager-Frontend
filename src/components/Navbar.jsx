@@ -20,7 +20,7 @@ const Navbar = ({tokenTimeOut,handleRegistration}) => {
 
   const handleSignInAndSignUp = () => {
     // const verify = localStorage.getItem('token');
-    if (tokenTimeOut == true) {
+    if (tokenTimeOut === true) {
         setShowSignOut(false) 
         setShowSignIn(true)
         setShowSignUp(true)
@@ -35,7 +35,7 @@ const Navbar = ({tokenTimeOut,handleRegistration}) => {
      };
 
   const handleSignOut = () => {
-    localStorage.removeItem('token');
+    localStorage.clear();
     toast.success("You have been successfully signed out")
      setShowSignOut(false)
      setShowSignIn(true)

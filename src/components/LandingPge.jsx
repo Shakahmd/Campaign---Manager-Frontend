@@ -30,7 +30,7 @@ const LandingPge = () => {
        console.log(issued)
        console.log(expired)
        if(now > expired){
-         localStorage.removeItem('token')
+         localStorage.clear()
          return true
        }else{
         return false
