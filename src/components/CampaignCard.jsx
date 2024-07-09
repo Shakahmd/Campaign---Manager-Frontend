@@ -61,8 +61,8 @@ const CampaignCard = ({index,campaigns,baseURL,filename,handleShowCampaign}) => 
                 <WhatsappShareButton className='mx-3' url={shareUrl}>
                    <WhatsappIcon   size={32} round={true} />
                 </WhatsappShareButton>
-                <FacebookShareButton>
-                   <FacebookIcon size={32} round={true} url={shareUrl} />
+                <FacebookShareButton url={shareUrl}>
+                   <FacebookIcon size={32} round={true}  />
                 </FacebookShareButton>
               </div>
               
