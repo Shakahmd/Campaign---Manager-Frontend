@@ -102,10 +102,7 @@ const LandingPge = () => {
           
           </div>
 
-          <div className='mt-8'>
-          
-            <p> footer content need to show here  </p>
-          </div>
+         
         </div>
       
     </div>

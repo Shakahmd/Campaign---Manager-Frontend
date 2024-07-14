@@ -19,10 +19,6 @@ const CreateCampaign = ({ ButtonText = "New Campaign" ,showEditForm,campaigns,ba
      
     }
  
-       
-   
-    
-
   return (
     <div>
       <div>
