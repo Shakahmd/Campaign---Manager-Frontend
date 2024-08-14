@@ -32,7 +32,7 @@ const SignIn= ({handleRegistration}) => {
 
    const handleSubmit = async()=>{
     try {
-      const response = await axios.post(`${baseURL}/api/user/login`,{
+      const response = await axios.post(`${baseURL}/user/login`,{
         fullname,
         email,
         password
