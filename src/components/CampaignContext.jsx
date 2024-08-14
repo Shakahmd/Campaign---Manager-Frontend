@@ -15,7 +15,7 @@ const CampaignProvider = ({children})=>{
         }
       }
    return(
-    <CampaignContext.Provider value={{campaign,getSingleCampaign}}>
+    <CampaignContext.Provider value={{campaign,getSingleCampaign  }}>
         {children}
     </CampaignContext.Provider>
    )   

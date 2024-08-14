@@ -10,9 +10,11 @@ const EventCard = ({ imageUrl, onTargetInfo ,campaigns}) => {
   
   const [textPosition, setTextPosition] = useState({ x: 0, y: 0 });
   const [dropX, setDropX] = useState(campaigns?.text_position?.x ?? 0);
-  const [dropY, setDropY] = useState(campaigns ? campaigns.fg_image_position.y :0);
-  const [fontSize, setFontSize] = useState(campaigns?.text_font_size ?? '16px');
-  const [textColor, setTextColor] = useState(campaigns ? campaigns.text_font_color:'#000'); // Default color
+  const [dropY, setDropY] = useState(campaigns?.text_position?.y ?? 0);
+  const [fontSize, setFontSize] = useState(  campaigns && campaigns.text_font_size !== 'undefined' && campaigns.text_font_size !== undefined
+  ? campaigns.text_font_size
+  : '16px');
+  const [textColor, setTextColor] = useState(campaigns ? campaigns.text_font_color:'#000000'); // Default color
   const [isDragging, setIsDragging] = useState(false);
   const cardRef = useRef(null);
   const imageRef = useRef(null);

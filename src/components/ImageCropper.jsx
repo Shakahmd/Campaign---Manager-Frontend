@@ -25,9 +25,11 @@ const ImageCropper = ({cropWidth,cropHeight,campaignid,textFontSize,slug}) => {
       
     
      const handleNameInput = ()=>{
-      if(textFontSize){
-         setShowNameInput(true)
-      }
+         
+         if(textFontSize !== "undefined"){
+             setShowNameInput(true)
+               
+         }
      }
 
 

@@ -16,6 +16,7 @@ const User = () => {
         
        useEffect(()=>{
         getSingleCampaign(slug)
+        
       },[])
   
       const imageName = campaign.bg_image
