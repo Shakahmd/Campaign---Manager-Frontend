@@ -8,7 +8,7 @@ import { useLocation, useNavigate } from 'react-router-dom'
 
 const Download = () => {
   let baseURL = import.meta.env.VITE_API_BASE_URL
-   baseURL.replace('/api','')
+  
   const navigate = useNavigate()
   const location  = useLocation()
    const baseUrl = `${baseURL}/generated/`
