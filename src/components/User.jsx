@@ -11,7 +11,7 @@ const User = () => {
     
    
   const {campaign,getSingleCampaign} = useContext(CampaignContext)
-      
+  const baseUrl = import.meta.env.VITE_API_BASE_URL
        const {slug} = useParams()
         
        useEffect(()=>{
@@ -21,7 +21,7 @@ const User = () => {
   
       const imageName = campaign.bg_image
 
-    const baseURL = `http://localhost:3001/api/campaign/upload/`
+    const baseURL = `${baseUrl}/campaign/upload/`
 
       
    

@@ -3,8 +3,9 @@ import { Box,Card,Inset,Text} from '@radix-ui/themes'
 import { useNavigate } from 'react-router-dom'
 
 const OngoingCampaigns = ({campaignImage,title,slug}) => {
+  const baseUrl = import.meta.env.VITE_API_BASE_URL
    const navigate = useNavigate()
-  const baseURL = 'http://localhost:3001/api/campaign/upload/'
+  const baseURL = `${baseUrl}/campaign/upload/`
   const shareUrl  = `/c/${slug}`
 
   return (

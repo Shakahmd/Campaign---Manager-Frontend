@@ -10,6 +10,7 @@ import axios from 'axios'
 
 const LandingPge = () => {
      
+     const baseURL = import.meta.env.VITE_API_BASE_URL
      const[tokenTimeOut,setTokenTimeOut] =  useState(false)
      const [activeCampaignsData,setActiveCampaignsData] = useState([])
      const navigate = useNavigate()
@@ -60,7 +61,7 @@ const LandingPge = () => {
      useEffect(() => {
       const getCampaignsForOngoing = async () => {
         try {
-          const response = await axios.get('http://localhost:3001/api/campaign')
+          const response = await axios.get(`${baseURL}/campaign`)
           const activeCampaignsData = response.data
          
           setActiveCampaignsData(activeCampaignsData)

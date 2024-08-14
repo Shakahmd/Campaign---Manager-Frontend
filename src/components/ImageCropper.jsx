@@ -11,7 +11,7 @@ const ImageCropper = ({cropWidth,cropHeight,campaignid,textFontSize,slug}) => {
 
    
 
-
+  const baseURL = import.meta.env.VITE_API_BASE_URL
     const navigate = useNavigate()
     const ASPECT_RATIO = cropWidth/cropHeight
     const cropperRef = useRef()
@@ -98,7 +98,7 @@ const ImageCropper = ({cropWidth,cropHeight,campaignid,textFontSize,slug}) => {
                     formData.append('profilePicture',croppedImage)
                     formData.append('campaignId',campaignid)
                     name ? formData.append('nameText',name):null
-                   const response = await axios.post('http://localhost:3001/api/campaign/user',formData,{
+                   const response = await axios.post(`${baseURL}/campaign/user`,formData,{
                   headers:{
                     'Content-Type':'multipart/formdata'
                   } })

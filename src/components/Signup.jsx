@@ -10,6 +10,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 const Signup = () => {
+  const baseURL = import.meta.env.VITE_API_BASE_URL
     const [fullname,setFullname] = useState('');
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('')
@@ -33,7 +34,7 @@ const Signup = () => {
 
     const handleSubmit = async()=>{
       try {
-        const response = await axios.post('http://localhost:3001/api/user/signup',{
+        const response = await axios.post(`${baseURL}/api/user/signup`,{
           fullname,
           email,
           password

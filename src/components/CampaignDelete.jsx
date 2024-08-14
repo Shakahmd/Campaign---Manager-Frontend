@@ -15,12 +15,13 @@ OnClick,
 }) => {
   
    const [isOpen,setIsOpen] = useState(false)
+   const baseURL = import.meta.env.VITE_API_BASE_URL
 
   const handleCampaignDelete = async(event)=>{
     event.preventDefault()
     try {
          const id = campaigns._id
-        const response = axios.delete(`http://localhost:3001/api/campaign/${id}`)
+        const response = axios.delete(`${baseURL}/campaign/${id}`)
         console.log((await response).data.message)
          toast.success('Campaign deleted !')
          setIsOpen(false)

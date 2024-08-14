@@ -9,6 +9,7 @@ import axios from 'axios';
 
 
 const DashBoard = () => {
+  const baseURL = import.meta.env.VITE_API_BASE_URL
   const [showCampaign,setShowCampaign] = useState(false)
   const [campaignData,setCampaignData] = useState([])
 
@@ -16,7 +17,7 @@ const DashBoard = () => {
   const handleGetCampaignData = async()=>{
       try {
          const tokenId = localStorage.getItem('token')
-        const response = await axios.get(`http://localhost:3001/api/campaign/:id`,{
+        const response = await axios.get(`${baseURL}/campaign/:id`,{
           headers:{
             'Authorization': `Bearer ${tokenId}`,
           

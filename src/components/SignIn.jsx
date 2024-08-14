@@ -10,6 +10,7 @@ import { Button } from '@radix-ui/themes';
 
 
 const SignIn= ({handleRegistration}) => {
+  const baseURL = import.meta.env.VITE_API_BASE_URL
   const[fullname,setFullname] = useState('')
   const[email,setEmail] = useState('')
   const[password,setPassword] = useState('')
@@ -31,7 +32,7 @@ const SignIn= ({handleRegistration}) => {
 
    const handleSubmit = async()=>{
     try {
-      const response = await axios.post('http://localhost:3001/api/user/login',{
+      const response = await axios.post(`${baseURL}/api/user/login`,{
         fullname,
         email,
         password

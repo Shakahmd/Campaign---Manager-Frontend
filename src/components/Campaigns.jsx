@@ -2,8 +2,9 @@ import React from 'react'
 import CampaignCard from './CampaignCard'
 
 const Campaigns = ({campaignData,handleShowCampaign}) => {
+    const baseUrl = import.meta.env.VITE_API_BASE_URL
 
-   const baseURL = 'http://localhost:3001/api/campaign/upload/'
+   const baseURL = `${baseUrl}/campaign/upload/`
 
  return (
     <>

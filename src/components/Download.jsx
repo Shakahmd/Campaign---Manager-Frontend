@@ -7,9 +7,12 @@ import { useLocation, useNavigate } from 'react-router-dom'
 
 
 const Download = () => {
+  let baseURL = import.meta.env.VITE_API_BASE_URL
+   baseURL.replace('/api','')
   const navigate = useNavigate()
   const location  = useLocation()
-  const baseUrl = `http://localhost:3001/generated/`
+   const baseUrl = `${baseURL}/generated/`
+
   const uniqueName = location.state?.campaignPoster
   const slug = location.state?.slug
   // console.log(slug,'title from imagecropper')

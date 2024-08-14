@@ -28,6 +28,7 @@ const CampaignForm = ({
  
  
 }) => {
+  const baseUrl = import.meta.env.VITE_API_BASE_URL
   const [title, setTitle] = useState( campaigns ? campaigns.title:'');
   const [description, setDescription] = useState(campaigns ? campaigns.description:'');
   const [image, setImage] = useState(null);
@@ -123,7 +124,7 @@ const CampaignForm = ({
         return;
       }
 
-      const response = await axios.post('http://localhost:3001/api/campaign/upload', formData, {
+      const response = await axios.post(`${baseUrl}/campaign/upload`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
           'Authorization': `Bearer ${token}`
@@ -176,7 +177,7 @@ const CampaignForm = ({
         y: textInfo.y
       }));
 
-      const response = await axios.put('http://localhost:3001/api/campaign/edit',formData,{
+      const response = await axios.put(`${baseUrl}/campaign/edit`,formData,{
         headers:{
           "Content-Type":"multipart/form-data"
         }
